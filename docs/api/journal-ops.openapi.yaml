@@ -1,0 +1,74 @@
+openapi: 3.0.3
+info:
+  title: MiniKBP Journal Operations API
+  version: 0.1.0
+paths:
+  /v0/journal-audit/:
+    get:
+      summary: List journal audit entries
+      parameters:
+        - name: assignment
+          in: query
+          required: true
+          schema: { type: integer }
+        - name: limit
+          in: query
+          schema: { type: integer, default: 100 }
+      responses:
+        "200":
+          description: Audit items
+  /v0/journal-sync/batch/:
+    post:
+      summary: Apply offline journal operations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ops:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      client_op_id: { type: string }
+                      type: { type: string }
+                      assignment_id: { type: integer }
+                      student_id: { type: integer }
+                      date: { type: string, format: date }
+                      slot: { type: integer }
+                      value: { type: string }
+      responses:
+        "200":
+          description: Applied ops and conflicts
+  /v0/journal-sync/resolve/:
+    post:
+      summary: Resolve sync conflicts
+      responses:
+        "200":
+          description: Resolution result
+  /v0/journal-presence/heartbeat/:
+    post:
+      summary: Update teacher presence cell
+      responses:
+        "200":
+          description: OK
+  /v0/journal-presence/stream/:
+    get:
+      summary: SSE presence stream
+      responses:
+        "200":
+          description: text/event-stream
+  /v0/staff-security/status/:
+    get:
+      summary: Staff lock status
+      responses:
+        "200":
+          description: Lock state
+  /v0/staff-security/unlock/:
+    post:
+      summary: Unlock with PIN
+      responses:
+        "200":
+          description: Unlocked

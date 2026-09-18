@@ -1,0 +1,11 @@
+Django>=5.2,<6.0
+djangorestframework>=3.16
+djangorestframework-simplejwt>=5.4
+django-cors-headers>=4.7
+requests>=2.32
+pyotp>=2.9
+PyJWT[crypto]>=2.8
+google-auth>=2.29
+firebase-admin>=6.6
+django-redis>=5.4
+gunicorn>=23.0

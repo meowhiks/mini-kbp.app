@@ -1,0 +1,23 @@
+.dockerignore
+node_modules
+.next
+.git
+.cursor
+**/__pycache__
+**/*.pyc
+server/db.sqlite3
+.env
+.env.local
+MiniKBP-MobilePublish
+desktop
+android
+kbp-app
+claude-design-mcp
+vercel-backend
+docs
+*.md
+!README.md
+# Large desktop binaries are bind-mounted at runtime (see docker-compose web volumes)
+public/downloads/*.AppImage
+public/downloads/*.deb
+public/downloads/*.zip

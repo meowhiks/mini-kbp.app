@@ -1,0 +1,57 @@
+# Production overrides: gunicorn, next start, Apache edge, DEBUG=0
+# Usage: docker compose -f docker-compose.yml -f docker-compose.prod.yml --profile tunnel up -d --build
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/api/Dockerfile.prod
+    volumes:
+      - ./server/db.sqlite3:/app/db.sqlite3
+    depends_on:
+      - postfix
+      - redis
+    environment:
+      DJANGO_DEBUG: "${DJANGO_DEBUG:-0}"
+      APP_COOKIE_DOMAIN: "${APP_COOKIE_DOMAIN:-.mini-kbp.site}"
+      APP_PUBLIC_URL: "${APP_PUBLIC_URL:-https://lk.mini-kbp.site}"
+      REDIS_URL: "${REDIS_URL:-redis://redis:6379/0}"
+    command: >
+      sh -c "python manage.py migrate &&
+      gunicorn kbp_server.wsgi:application
+      --bind 0.0.0.0:8000
+      --workers ${GUNICORN_WORKERS:-3}
+      --timeout 120
+      --access-logfile -
+      --error-logfile -"
+    ports: []
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/web/Dockerfile.prod
+    environment:
+      NODE_ENV: production
+      APP_PUBLIC_URL: "${APP_PUBLIC_URL:-https://lk.mini-kbp.site}"
+      NEXT_PUBLIC_MINIKBP_SERVER_URL: "${NEXT_PUBLIC_MINIKBP_SERVER_URL:-https://lk.mini-kbp.site}"
+    volumes: !reset []
+    ports: !reset []
+
+  apache:
+    build:
+      context: ./docker/apache
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+      - api
+    restart: unless-stopped
+
+  cloudflared:
+    depends_on:
+      - apache
+
+  nginx:
+    profiles: ["legacy-nginx"]
+    ports: []

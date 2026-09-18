@@ -1,0 +1,58 @@
+{
+  "name": "minikbp-desktop",
+  "productName": "Мини КБиП",
+  "desktopName": "minikbp-desktop",
+  "version": "0.3.12",
+  "description": "Мини КБиП — журнал и расписание",
+  "author": "MiniKBP <hello@mini-kbp.site>",
+  "homepage": "https://mini-kbp.site",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --linux AppImage deb --win zip",
+    "dist:linux": "electron-builder --linux AppImage deb",
+    "dist:win": "electron-builder --win zip"
+  },
+  "build": {
+    "appId": "site.mini-kbp.desktop",
+    "productName": "Мини КБиП",
+    "copyright": "Copyright © MiniKBP",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "staticServer.js",
+      "navigationPolicy.js",
+      "windowChrome.js",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../out",
+        "to": "out",
+        "filter": ["**/*"]
+      }
+    ],
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "category": "Education",
+      "maintainer": "MiniKBP <hello@mini-kbp.site>",
+      "executableName": "minikbp-desktop",
+      "syncDesktopName": true,
+      "artifactName": "mini-kbp-${version}-linux-${arch}.${ext}"
+    },
+    "win": {
+      "target": ["zip"],
+      "artifactName": "mini-kbp-${version}-win-${arch}.${ext}"
+    },
+    "publish": null
+  },
+  "devDependencies": {
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12"
+  }
+}

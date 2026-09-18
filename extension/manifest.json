@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Мини КБиП — сеть",
+  "description": "Помогает загружать расписание и журнал с kbp.by, когда сервер недоступен. Только с вашего явного согласия.",
+  "version": "0.1.0",
+  "permissions": ["storage", "alarms"],
+  "host_permissions": [
+    "https://kbp.by/*",
+    "https://mini-kbp.site/*",
+    "https://lk.mini-kbp.site/*",
+    "https://*.vercel.app/*",
+    "http://localhost:3000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mini-kbp.site/*",
+        "https://*.vercel.app/*",
+        "http://localhost:3000/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

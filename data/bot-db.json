@@ -1,0 +1,81 @@
+{
+  "users": [
+    {
+      "token": "0c8c38bbc6aa43ceb5bec800",
+      "studentName": "Лагун",
+      "groupId": "557",
+      "birthDay": "13.05.2009",
+      "cookies": "PHPSESSID=4f19b8f38a0dcf6cf35322c7bf02df8d; path=/",
+      "createdAt": "2025-12-12T07:36:43.530Z",
+      "telegramUserId": 5135478669,
+      "telegramFirstName": "Мяумба ❣️",
+      "boundAt": "2025-12-12T07:58:13.158Z"
+    },
+    {
+      "token": "1bba5bc821b14b9d9c6a17ce",
+      "studentName": "Лагун",
+      "groupId": "557",
+      "birthDay": "13.05.2009",
+      "cookies": "PHPSESSID=4f19b8f38a0dcf6cf35322c7bf02df8d; path=/",
+      "createdAt": "2025-12-12T07:38:00.612Z",
+      "telegramUserId": 5135478669,
+      "telegramFirstName": "Мяумба ❣️",
+      "boundAt": "2025-12-12T07:58:12.665Z"
+    },
+    {
+      "token": "b2139c1c8cbf433c9bc1cfa2",
+      "studentName": "Лагун",
+      "groupId": "557",
+      "birthDay": "13.05.2009",
+      "cookies": "PHPSESSID=4f19b8f38a0dcf6cf35322c7bf02df8d; path=/",
+      "createdAt": "2025-12-12T07:41:21.281Z",
+      "telegramUserId": 5135478669,
+      "telegramFirstName": "Мяумба ❣️",
+      "boundAt": "2025-12-12T07:58:12.790Z"
+    },
+    {
+      "token": "7641048a9374428689da1419",
+      "studentName": "Лагун",
+      "groupId": "557",
+      "birthDay": "13.05.2009",
+      "cookies": "PHPSESSID=4f19b8f38a0dcf6cf35322c7bf02df8d; path=/",
+      "createdAt": "2025-12-12T07:44:15.156Z",
+      "telegramUserId": 5135478669,
+      "telegramFirstName": "Мяумба ❣️",
+      "boundAt": "2025-12-12T07:58:12.971Z"
+    },
+    {
+      "token": "538667031fec4653b68b1c28",
+      "studentName": "Лагун",
+      "groupId": "557",
+      "birthDay": "13.05.2009",
+      "cookies": "PHPSESSID=4f19b8f38a0dcf6cf35322c7bf02df8d; path=/",
+      "createdAt": "2025-12-12T07:48:26.064Z",
+      "telegramUserId": 5135478669,
+      "telegramFirstName": "Мяумба ❣️",
+      "boundAt": "2025-12-12T07:58:13.089Z"
+    },
+    {
+      "token": "6cd15410e2d7410ea280176c",
+      "studentName": "Лагун",
+      "groupId": "557",
+      "birthDay": "13.05.2009",
+      "cookies": "PHPSESSID=8a8d39dffe9bebfafc2482f83617bfff; path=/",
+      "createdAt": "2025-12-12T07:57:01.357Z",
+      "telegramUserId": 5135478669,
+      "telegramFirstName": "Мяумба ❣️",
+      "boundAt": "2025-12-12T07:58:13.225Z"
+    },
+    {
+      "token": "f63d434ed3c548ae9f6d1517",
+      "studentName": "Лагун",
+      "groupId": "557",
+      "birthDay": "13.05.2009",
+      "cookies": "PHPSESSID=8a8d39dffe9bebfafc2482f83617bfff; path=/",
+      "createdAt": "2025-12-12T07:57:33.987Z",
+      "telegramUserId": 5135478669,
+      "telegramFirstName": "Мяумба ❣️",
+      "boundAt": "2025-12-12T07:58:13.352Z"
+    }
+  ]
+}

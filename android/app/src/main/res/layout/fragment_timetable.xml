@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pageBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Fixed: search always at top -->
+        <LinearLayout
+            android:id="@+id/fixedHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <FrameLayout
+                android:id="@+id/searchInputWrap"
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <EditText
+                    android:id="@+id/searchInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_search_field"
+                    android:fontFamily="@font/manrope"
+                    android:hint="Найдите расписание"
+                    android:imeOptions="actionSearch"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="44dp"
+                    android:paddingEnd="44dp"
+                    android:singleLine="true"
+                    android:textColor="@color/textPrimary"
+                    android:textColorHint="@color/textMuted"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/searchIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginStart="14dp"
+                    android:contentDescription="@null"
+                    android:elevation="2dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_search" />
+
+                <ImageView
+                    android:id="@+id/searchClear"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Очистить"
+                    android:elevation="2dp"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_close"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ScrollView
+                android:id="@+id/timetableScroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:fillViewport="true"
+                android:paddingBottom="96dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="12dp"
+                    android:paddingBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/recentLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/manrope"
+                        android:paddingHorizontal="4dp"
+                        android:text="Недавние:"
+                        android:textColor="@color/textMuted"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/recentScroll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:paddingHorizontal="4dp"
+                        android:scrollbars="none"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/recentContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" />
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/timetableTitle"
+                        style="@style/SettingsPageTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingHorizontal="4dp"
+                        android:text="Расписание" />
+
+                    <TextView
+                        android:id="@+id/timetableSubtitle"
+                        style="@style/ProfileSubtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:paddingHorizontal="4dp" />
+
+                    <TextView
+                        android:id="@+id/kbpNotice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_error_banner"
+                        android:fontFamily="@font/manrope"
+                        android:padding="10dp"
+                        android:textColor="@color/markAlert"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/dayStripRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="2dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/dayPrevButton"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/bg_day_chip_inactive"
+                            android:gravity="center"
+                            android:text="‹"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="18sp" />
+
+                        <HorizontalScrollView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="6dp"
+                            android:layout_weight="1"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:id="@+id/dayStripContainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" />
+                        </HorizontalScrollView>
+
+                        <TextView
+                            android:id="@+id/dayNextButton"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/bg_day_chip_inactive"
+                            android:gravity="center"
+                            android:text="›"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/dayCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:cardBackgroundColor="@color/surface"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/border"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/dayHeader"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_day_header_normal"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="12dp">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/dayName"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/manrope"
+                                        android:textColor="@color/textPrimary"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/replacementLabel"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:fontFamily="@font/manrope"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textSize="11sp"
+                                        android:visibility="gone" />
+
+                                    <LinearLayout
+                                        android:id="@+id/replacementToggleRow"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:visibility="gone">
+
+                                        <com.google.android.material.switchmaterial.SwitchMaterial
+                                            android:id="@+id/showReplacementsSwitch"
+                                            style="@style/SettingsSwitch"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:scaleX="0.75"
+                                            android:scaleY="0.75" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/manrope"
+                                            android:text="Показать замены"
+                                            android:textColor="@color/textSecondary"
+                                            android:textSize="11sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="end"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/dayTimeRange"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/manrope"
+                                        android:textColor="@color/textSecondary"
+                                        android:textSize="11sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/todayBadge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
+                                        android:background="@drawable/bg_today_badge"
+                                        android:fontFamily="@font/manrope"
+                                        android:paddingHorizontal="8dp"
+                                        android:paddingVertical="3dp"
+                                        android:text="Сегодня"
+                                        android:textColor="#1E40AF"
+                                        android:textSize="12sp"
+                                        android:visibility="gone" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <androidx.viewpager2.widget.ViewPager2
+                                android:id="@+id/dayPager"
+                                android:layout_width="match_parent"
+                                android:layout_height="420dp"
+                                android:minHeight="240dp"
+                                android:nestedScrollingEnabled="false" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/timetableEmpty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/manrope"
+                        android:gravity="center"
+                        android:text="Загрузка…"
+                        android:textColor="@color/textMuted"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+            </ScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+    <!-- Search overlay: backdrop + compact dropdown -->
+    <FrameLayout
+        android:id="@+id/searchOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/searchBackdrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#66000000"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <LinearLayout
+            android:id="@+id/searchOverlayContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/searchDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                app:strokeColor="@color/border"
+                app:strokeWidth="1dp">
+
+                <ScrollView
+                    android:id="@+id/searchResultsScroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="200dp"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/searchResultsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </ScrollView>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/searchEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_search_dropdown"
+                android:fontFamily="@font/manrope"
+                android:gravity="center"
+                android:padding="14dp"
+                android:text="Ничего не найдено"
+                android:textColor="@color/textSecondary"
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

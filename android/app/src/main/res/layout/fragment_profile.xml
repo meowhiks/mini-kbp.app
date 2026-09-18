@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pageBackground">
+
+    <ProgressBar
+        android:id="@+id/profileLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <ScrollView
+        android:id="@+id/profileScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp">
+
+            <TextView
+                style="@style/ProfilePageTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Профиль" />
+
+            <TextView
+                style="@style/ProfileSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Личные данные и безопасность аккаунта" />
+
+            <!-- Avatar card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <FrameLayout
+                        android:id="@+id/avatarButton"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_avatar_ring" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/avatarImage"
+                            android:layout_width="88dp"
+                            android:layout_height="88dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circle" />
+
+                        <TextView
+                            android:id="@+id/avatarInitials"
+                            android:layout_width="88dp"
+                            android:layout_height="88dp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/manrope"
+                            android:gravity="center"
+                            android:letterSpacing="0"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="30sp"
+                            android:textStyle="normal" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/changePhotoButton"
+                        style="@style/ProfileLink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:padding="4dp"
+                        android:text="Сменить фото" />
+
+                    <TextView
+                        android:id="@+id/avatarName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/manrope"
+                        android:letterSpacing="0"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/avatarGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/textMuted"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/avatarTelegram"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/textMuted"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Security -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        style="@style/ProfileSectionTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Безопасность и сеансы" />
+
+                    <TextView
+                        android:id="@+id/profileLockedBanner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_error_banner"
+                        android:padding="12dp"
+                        android:text="Профиль заблокирован преподавателем."
+                        android:textColor="#92400E"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        style="@style/ProfileFieldLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Срок действия сессии" />
+
+                    <Spinner
+                        android:id="@+id/sessionTtlSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_auth_input"
+                        android:paddingHorizontal="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/quickLoginButton"
+                            style="@style/MiniKbpButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:enabled="false"
+                            android:text="Быстрый вход" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/logoutButton"
+                            style="@style/MiniKbpButton.Outlined"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Выйти" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sessionsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Main fields -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        style="@style/ProfileSectionTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Основное" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Фамилия"
+                        style="@style/ProfileFieldLabel" />
+
+                    <EditText
+                        android:id="@+id/lastNameInput"
+                        style="@style/ProfileEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_auth_input"
+                        android:hint="Иванов"
+                        android:inputType="textPersonName"
+                        android:maxLength="80"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="14dp" />
+
+                    <TextView
+                        style="@style/ProfileFieldLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Имя" />
+
+                    <EditText
+                        android:id="@+id/firstNameInput"
+                        style="@style/ProfileEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_auth_input"
+                        android:hint="Иван"
+                        android:inputType="textPersonName"
+                        android:maxLength="80"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="14dp" />
+
+                    <TextView
+                        style="@style/ProfileFieldLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Отчество" />
+
+                    <EditText
+                        android:id="@+id/patronymicInput"
+                        style="@style/ProfileEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_auth_input"
+                        android:hint="Иванович"
+                        android:inputType="textPersonName"
+                        android:maxLength="80"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="14dp" />
+
+                    <TextView
+                        style="@style/ProfileFieldLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Телефон" />
+
+                    <EditText
+                        android:id="@+id/phoneInput"
+                        style="@style/ProfileEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_auth_input"
+                        android:hint="+375 …"
+                        android:inputType="phone"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="14dp" />
+
+                    <TextView
+                        style="@style/ProfileFieldLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Пол" />
+
+                    <Spinner
+                        android:id="@+id/genderSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_auth_input"
+                        android:paddingHorizontal="12dp" />
+
+                    <LinearLayout
+                        android:id="@+id/groupRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_auth_input"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="10dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Группа"
+                                android:textColor="@color/textMuted"
+                        android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/groupNameText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:textColor="@color/textPrimary"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/showGroupCheck"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Показывать"
+                            android:textColor="@color/textMuted"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/ProfileFieldLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="О себе" />
+
+                    <EditText
+                        android:id="@+id/infoInput"
+                        style="@style/ProfileEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_auth_input"
+                        android:gravity="top"
+                        android:hint="Коротко о себе…"
+                        android:inputType="textMultiLine"
+                        android:maxLength="2000"
+                        android:minLines="3"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="14dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Email -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/emailSectionTitle"
+                        style="@style/ProfileSectionTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Email" />
+
+                    <LinearLayout
+                        android:id="@+id/emailIdleBlock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_auth_input"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/emailDraftInput"
+                            style="@style/ProfileEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="email@example.com"
+                            android:inputType="textEmailAddress"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="12dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/bg_input_action_divider" />
+
+                        <TextView
+                            android:id="@+id/emailSendCodeButton"
+                            style="@style/ProfileInlineAction"
+                            android:text="Отправить код" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/emailCodeBlock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/emailPendingText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/textMuted"
+                            android:textSize="12sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/bg_auth_input"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/emailCodeInput"
+                                style="@style/ProfileEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="monospace"
+                                android:hint="000000"
+                                android:inputType="number"
+                                android:maxLength="6"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="12dp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@drawable/bg_input_action_divider" />
+
+                            <TextView
+                                android:id="@+id/emailConfirmButton"
+                                style="@style/ProfileInlineAction"
+                                android:text="Подтвердить" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/emailCancelButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:padding="4dp"
+                            android:text="Отмена"
+                            android:textColor="@color/textMuted"
+                        android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 2FA -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Двухфакторная аутентификация"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/twoFaBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_badge_off"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:text="Выкл."
+                            android:textColor="@color/textMuted"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/twoFaEnableButton"
+                        style="@style/MiniKbpButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Включить"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/twoFaSetupBlock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/twoFaQrImage"
+                            android:layout_width="240dp"
+                            android:layout_height="240dp"
+                            android:contentDescription="QR для 2FA"
+                            android:scaleType="fitCenter" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/bg_auth_input"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/twoFaCodeInput"
+                                style="@style/ProfileEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:hint="Код из приложения"
+                                android:inputType="number"
+                                android:maxLength="6"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="12dp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@drawable/bg_input_action_divider" />
+
+                            <TextView
+                                android:id="@+id/twoFaConfirmButton"
+                                style="@style/ProfileInlineAction"
+                                android:text="Подтвердить" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/twoFaSetupCancel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:padding="4dp"
+                            android:text="Отмена"
+                            android:textColor="@color/textMuted"
+                        android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/twoFaDisableBlock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/twoFaDisableStartButton"
+                            style="@style/MiniKbpButton.Outlined"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Отключить"
+                            android:textColor="@color/error" />
+
+                        <LinearLayout
+                            android:id="@+id/twoFaDisableForm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/bg_auth_input"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/twoFaDisableCodeInput"
+                                style="@style/ProfileEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:hint="Код из приложения"
+                                android:inputType="number"
+                                android:maxLength="6"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="12dp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@drawable/bg_input_action_divider" />
+
+                            <TextView
+                                android:id="@+id/twoFaDisableConfirmButton"
+                                style="@style/ProfileInlineAction"
+                                android:background="@drawable/bg_inline_action_bottom_danger"
+                                android:text="Отключить" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/twoFaDisableCancel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:padding="4dp"
+                            android:text="Отмена"
+                            android:textColor="@color/textMuted"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/profileError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_error_banner"
+                android:padding="14dp"
+                android:textColor="@color/error"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/profileOk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_badge_on"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:textColor="@color/success"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveButton"
+                style="@style/MiniKbpButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Сохранить изменения" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

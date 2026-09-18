@@ -1,0 +1,26 @@
+# SAN config for local MiniKBP HTTPS (openssl)
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+req_extensions = v3_req
+
+[dn]
+C = BY
+O = MiniKBP Local
+CN = mini-kbp.site
+
+[v3_req]
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = mini-kbp.site
+DNS.2 = *.mini-kbp.site
+DNS.3 = localhost
+DNS.4 = localhost.mini-kbp.site
+IP.1 = 127.0.0.1
+IP.2 = ::1

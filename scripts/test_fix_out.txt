@@ -1,0 +1,13 @@
+﻿python : Traceback (most recent call last):
+C:\Users\User\AppData\Local\Temp\ps-script-17d9803e-7db7-4cec-b695-fb39adc86027.ps1:112 знак:36
++ ... owhiks/Scripts/MiniKBP"; python scripts/test_fix_line.py 2>&1 | Out-F ...
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "E:\.meowhiks\Scripts\MiniKBP\scripts\test_fix_line.py", line 4, in <module>
+    print(line.decode("utf-8", errors="replace")[:200])
+  File "E:\.meowhiks\Drivers\python11\Lib\encodings\cp1251.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\x98' in position 79: character maps to <undefined>

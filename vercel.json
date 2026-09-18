@@ -1,0 +1,10 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "crons": [
+    {
+      "path": "/api/warm-cache",
+      "schedule": "0 6 * * *"
+    }
+  ]
+}

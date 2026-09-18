@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="iphone-body" x1="60" y1="0" x2="330" y2="844" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5a5a5c"/>
+      <stop offset="0.35" stop-color="#1c1c1e"/>
+      <stop offset="0.65" stop-color="#252527"/>
+      <stop offset="1" stop-color="#3a3a3c"/>
+    </linearGradient>
+    <mask id="iphone-cutout">
+      <rect width="390" height="844" rx="58" fill="#fff"/>
+      <rect x="13" y="13" width="364" height="818" rx="47" fill="#000"/>
+    </mask>
+  </defs>
+  <!-- Side buttons -->
+  <rect x="-1.5" y="148" width="2.5" height="28" rx="1" fill="#48484a"/>
+  <rect x="-1.5" y="196" width="2.5" height="52" rx="1" fill="#48484a"/>
+  <rect x="-1.5" y="258" width="2.5" height="52" rx="1" fill="#48484a"/>
+  <rect x="389" y="210" width="2.5" height="72" rx="1" fill="#48484a"/>
+  <!-- Titanium frame (screen hole cut out) -->
+  <rect x="0" y="0" width="390" height="844" rx="58" fill="url(#iphone-body)" mask="url(#iphone-cutout)"/>
+  <!-- Inner edge highlight -->
+  <rect x="13" y="13" width="364" height="818" rx="47" stroke="#000" stroke-width="2.5" fill="none"/>
+  <!-- Dynamic Island -->
+  <rect x="132" y="20" width="126" height="35" rx="17.5" fill="#000"/>
+  <!-- Status bar -->
+  <text x="38" y="42" fill="#fff" font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="600">9:41</text>
+  <!-- Signal / battery icons (minimal) -->
+  <rect x="312" y="30" width="18" height="10" rx="2" stroke="#fff" stroke-width="1.2" fill="none"/>
+  <rect x="314" y="32" width="12" height="6" rx="1" fill="#34c759"/>
+  <!-- Home indicator -->
+  <rect x="128" y="818" width="134" height="5" rx="2.5" fill="#fff" fill-opacity="0.75"/>
+</svg>

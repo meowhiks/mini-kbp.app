@@ -1,0 +1,104 @@
+import { CapacitorHttp, HttpResponse } from "@capacitor/core";
+
+export type NativeHttpResponse = {
+  status: number;
+  headers: Record<string, string>;
+  data: string;
+};
+
+export function extractCookiePairs(setCookieHeaderValue: string | undefined): string[] {
+  if (!setCookieHeaderValue) return [];
+  // Split "a=b; Path=/, c=d; Path=/" safely-ish: only on commas before cookie-name=
+  const parts = setCookieHeaderValue.split(/,(?=\s*[^=;,]+\s*=)/);
+  const pairs: string[] = [];
+  for (const part of parts) {
+    const m = part.trim().match(/^([^=;,\s]+)=([^;]*)/);
+    if (m) pairs.push(`${m[1]}=${m[2]}`);
+  }
+  return pairs;
+}
+
+function normalizeHeaders(headers: HttpResponse["headers"]): Record<string, string> {
+  if (!headers || typeof headers !== "object") return {};
+  const out: Record<string, string> = {};
+  for (const [k, v] of Object.entries(headers as Record<string, unknown>)) {
+    if (v === undefined || v === null) continue;
+    out[String(k).toLowerCase()] = Array.isArray(v) ? v.join(", ") : String(v);
+  }
+  return out;
+}
+
+function headersFromInit(init: RequestInit): Record<string, string> {
+  const raw = init.headers;
+  if (!raw) return {};
+  if (raw instanceof Headers) {
+    const out: Record<string, string> = {};
+    raw.forEach((v, k) => {
+      out[k] = v;
+    });
+    return out;
+  }
+  if (Array.isArray(raw)) {
+    return Object.fromEntries(raw);
+  }
+  return { ...(raw as Record<string, string>) };
+}
+
+export async function nativeFetch(url: string, init: RequestInit = {}): Promise<Response> {
+  const method = String(init.method || "GET").toUpperCase();
+  const headers = headersFromInit(init);
+  const body = init.body == null ? undefined : typeof init.body === "string" ? init.body : String(init.body);
+  const res = await nativeRequestText({
+    url,
+    method,
+    headers,
+    data: method === "GET" || method === "HEAD" ? undefined : body,
+  });
+  return new Response(res.data, { status: res.status, headers: res.headers });
+}
+
+export async function nativeRequestText(opts: {
+  url: string;
+  method: string;
+  headers?: Record<string, string>;
+  data?: string;
+}): Promise<NativeHttpResponse> {
+  console.log("[HTTP] Request:", opts.method, opts.url);
+
+  type CapacitorHttpOptions = Parameters<typeof CapacitorHttp.request>[0];
+  const options: CapacitorHttpOptions = {
+    url: opts.url,
+    method: opts.method,
+    headers: opts.headers,
+    responseType: "text",
+  };
+
+  if (opts.data && opts.method.toUpperCase() !== "GET" && opts.method.toUpperCase() !== "HEAD") {
+    const ct = Object.entries(opts.headers || {}).find(([k]) => k.toLowerCase() === "content-type")?.[1] || "";
+    if (ct.toLowerCase().includes("application/x-www-form-urlencoded")) {
+      try {
+        options.data = Object.fromEntries(new URLSearchParams(opts.data));
+      } catch {
+        options.data = opts.data;
+      }
+    } else {
+      options.data = opts.data;
+    }
+  }
+
+  try {
+    const res = await CapacitorHttp.request(options);
+    const text = typeof res.data === "string" ? res.data : JSON.stringify(res.data);
+
+    console.log("[HTTP] Response status:", res.status, "len:", text?.length);
+
+    return {
+      status: res.status,
+      headers: normalizeHeaders(res.headers),
+      data: text,
+    };
+  } catch (err) {
+    console.error("[HTTP] Request failed:", err);
+    throw err;
+  }
+}

@@ -1,0 +1,2394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0065)https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=4 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+	   	        <meta name="keywords" content="Колледж, бизнес, право, учеба, курсовые, задания, дипломы, КБП, ТБП, профессия, товаровед, программист, 1С, предприятие, бухгалтер, экономика, экономист, техникум, KBP, TBP, банк, финансы, коммерция, юристы, работа, карьера, технологии, программы, обучение, аналитика">
+        <meta name="description" content="Колледж безнеса и права - это профессиональное обучение по следующим специальностям: экономика и организация производства, коммерческое дело, банковское дело, бухгалтерский учет, правоведение. Мы используем современные методы обучения и новые технологии для повышения уровня обучения: мультимедийные, программы и т.д.">
+        
+   		<link type="text/css" href="./Расписание КБП_files/jquery-ui-1.8.16.custom.css" rel="stylesheet">	
+		<script type="text/javascript" async="" src="./Расписание КБП_files/watch.js.загрузка"></script><script type="text/javascript" async="" src="./Расписание КБП_files/ga.js.загрузка"></script><script type="text/javascript" src="./Расписание КБП_files/jquery-1.6.2.min.js.загрузка"></script>
+		<script type="text/javascript" src="./Расписание КБП_files/jquery-ui-1.8.16.custom.min.js.загрузка"></script>
+		<script type="text/javascript" src="./Расписание КБП_files/jquery-commons.js.загрузка"></script>
+		<script type="text/javascript" src="./Расписание КБП_files/common.js.загрузка"></script>
+		<link rel="stylesheet" href="./Расписание КБП_files/style.css" type="text/css">
+		<link rel="stylesheet" href="./Расписание КБП_files/default.css" type="text/css">
+		        <title>Расписание КБП</title>
+    	
+    	<script type="text/javascript">
+    	$(function(){
+    		$('#slider_left').hover(
+    			function(){$(this).animate({opacity: .6,left:0});},
+    			function(){$(this).animate({opacity: .3,left:-10});}
+			)    		
+			
+			$('#slider_right').hover(
+				function(){$(this).animate({opacity: .6,right:0});},
+				function(){$(this).animate({opacity: .3,right:-10});}
+			)    
+			
+			$('#slider_right').click(function(){
+				$(this).hide();
+				$('#right_week').css('position','relative').show("slide", {direction: "right"}, 1500);
+				$('#left_week').css('position','absolute').hide("slide", {direction: "left"}, 1500, function(){$('#slider_left').show(200);});
+			})	
+			
+			$('#slider_left').click(function(){
+				$(this).hide();
+				$('#right_week').css('position','relative').hide("slide", {direction: "right"}, 1500);
+				$('#left_week').css('position','absolute').show("slide", {direction: "left"}, 1500, function(){$('#left_week').css('position','relative'); $('#slider_right').show(200);});			
+			})
+			
+			$('.ch_moves').click(function(){
+				if ($(this).attr('checked')) {
+					$('.pair.added.'+$(this).attr('id')).show();
+					$('.pair.removed.'+$(this).attr('id')).hide();
+				} else {
+					$('.pair.added.'+$(this).attr('id')).hide();
+					$('.pair.removed.'+$(this).attr('id')).show();					
+				}
+			})
+			
+    	})
+    	</script>
+    	
+
+<script type="text/javascript">
+$(document).ready(function(){
+        $(".metrika table a").each(function(i){
+        $(this).attr("id","ide"+parseInt(i+1));
+    });
+});
+</script>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26172548-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+<style>
+.ui-widget-overlay {opacity: 1;}
+</style>
+
+</head>
+<body>
+	﻿<div id="header">
+   	<form method="get" action="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;amp;id=4">
+	<div id="text_search">
+		<span class="style_text">Поиск по расписанию:</span> <input type="text" id="table-search" name="q" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+			<input type="submit" id="button_search" value="Показать">
+	</div>
+   	</form>
+	<div id="right_block">
+	<div id="info"><span class="style_text">
+				Расписание для группы 					</span></div>
+	<div id="options"><!--<a href="#"><div><img src="i/options.png" alt="настройки" /></div></a>--></div>	
+	</div>
+</div>
+    	<div id="options-block">
+    		Темы:
+    		<ul style="list-style-type: none; list-style-position: inside">
+	    		<li><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?theme=default">Расписание занятий</a></li>
+	    		<li><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?theme=classic">Бело-голубая</a></li>
+	    		<li><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?theme=blue">Голубая</a></li>
+	    		<li><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?theme=bw">Черно-белая</a></li>	    				
+    		</ul>
+    		<div style="margin-top:20px"><!--<a href="#" id="create-theme"></a>--></div> 		
+    	</div>
+    	<!--
+    	<div id="dialog" title="Создайте свою тему!">
+    		<div style="line-height: 1.5em">Вы можете разработать и предложить свою тему оформления расписания. Уже существующие темы можно найти по адресу http://guki.org/timetable/view_beta/css/themes/</div>
+    	</div>
+-->
+<div class="wrap">
+	<div id="wrapper">
+    	<div id="slider_left" style="display:none;"><img src="./Расписание КБП_files/left.png" alt=""></div>
+    	<div id="slider_right"><img src="./Расписание КБП_files/right.png" alt=""></div>
+    	
+		<div id="content">
+	    	<div class="find_block">
+	    	
+	    	<div style="margin: 0 auto; width:300px; padding-top:45px; text-align:center;">
+	
+	    	</div>
+	    	
+	    	<div style="position:relative;">
+	    	<div id="left_week" style="position:relative; width:100%;">
+	    	<p class="date">4  — 9 мая</p>
+	    	<!--<p class="today">вторая неделя</p>-->
+<!--<p class="today">Ознакомление с печатным вариантом изменений в расписании учебных занятий на доске объявлений ОБЯЗАТЕЛЬНО!</p>-->
+<p class="today">Ознакомление с печатным вариантом изменений в расписании учебных занятий на доске объявлений ОБЯЗАТЕЛЬНО!!!</p>
+
+	    	<table style="padding-top:10px;">
+	    		<tbody><tr>
+	    			<th></th>
+	    			<th>Пнд</th>
+	    			<th>Втр</th>
+	    			<th>Срд</th>
+	    			<th>Чтв</th>
+	    			<th>Птн</th>
+	    			<th>Сбт</th>
+	    			<th></th>
+	    		</tr>
+	    		<tr class="zamena">
+	    		    <th>&nbsp;</th>
+			    				    	<th>
+	    		    	    		    		    				<label><input type="checkbox" class="ch_moves" id="lw_1" checked="checked"> Показать замены</label></th>
+	    		    		    		    					    		    
+	    						    	<th>
+	    		    					</th>    		    
+	    						    	<th>
+	    		    					</th>    		    
+	    						    	<th>
+	    		    					</th>    		    
+	    						    	<th>
+	    		    					</th>    		    
+	    						    	<th>
+	    		    					</th>    		    
+	    				    			<th></th>
+	    		</tr>
+	    		    		<tr>
+	    			<td class="number">1</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="1" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="1" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="1" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="1" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="1" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="1" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">1</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">2</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="2" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="2" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="2" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="2" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="2" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="2" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">2</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">3</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="3" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="3" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="3" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="3" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="3" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="3" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">3</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">4</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="4" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="4" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="4" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="4" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="4" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="4" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">4</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">5</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="5" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="5" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="5" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="5" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1908" -->
+	    						<div class="pair lw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=25">ИстБелГос</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=29">Занковец Е.Ю.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=21">425</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1915" -->
+	    						<div class="pair lw_6">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=105">ОперацСистем</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=95">Сватко И.Б.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=62">406</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">5</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">6</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="6" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1885" -->
+	    						<div class="pair lw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=101">ИнтрументПО</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=93">Кривошеина А.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=58">419</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="6" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="6" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1909" -->
+	    						<div class="pair lw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=25">ИстБелГос</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=29">Занковец Е.Ю.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=21">425</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1916" -->
+	    						<div class="pair lw_6">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=105">ОперацСистем</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=95">Сватко И.Б.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=62">406</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">6</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">7</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1876" -->
+	    						<div class="pair lw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=101">ИнтрументПО</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=93">Кривошеина А.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=2"></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=58">419</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1886" -->
+	    						<div class="pair lw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=98">МатемПрофДеят</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=96">Гальцова О.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=3">427</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1894" -->
+	    						<div class="pair lw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1901" -->
+	    						<div class="pair lw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=25">ИстБелГос</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=29">Занковец Е.Ю.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=21">425</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1910" -->
+	    						<div class="pair lw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=104">АрифмЛогВТ</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=94">Фоменко Н.К.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=20">405</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1917" -->
+	    						<div class="pair lw_6">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=97">ТРПО</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=97">Сидоренко В.О.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=63">410</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">7</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">8</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1877" -->
+	    						<div class="pair lw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=2">ФизКультура</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=18">Демидович К.О.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=2"></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=18">20</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1887" -->
+	    						<div class="pair lw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=98">МатемПрофДеят</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=96">Гальцова О.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=3">427</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1895" -->
+	    						<div class="pair lw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1902" -->
+	    						<div class="pair lw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=2">ФизКультура</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=18">Демидович К.О.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=18">20</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1911" -->
+	    						<div class="pair lw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=2">ФизКультура</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=18">Демидович К.О.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=18">20</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1918" -->
+	    						<div class="pair lw_6">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=97">ТРПО</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=97">Сидоренко В.О.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=63">410</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">8</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">9</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1879" -->
+	    						<div class="pair lw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=44">Смелова А.Д.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=2"></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=4">510</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    						    						<!--  pair-id="1878" -->
+	    						<div class="pair lw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=49">Кондратьев</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=2"></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=44">508</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1889" -->
+	    						<div class="pair lw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=44">Смелова А.Д.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=4">510</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    						    						<!--  pair-id="1888" -->
+	    						<div class="pair lw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=49">Кондратьев</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=44">508</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1896" -->
+	    						<div class="pair lw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1903" -->
+	    						<div class="pair lw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=103">ОснИнжГраф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=34">Кудласевич В.С.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=32">413</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1912" -->
+	    						<div class="pair lw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=101">ИнтрументПО</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=93">Кривошеина А.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=58">419</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1919" -->
+	    						<div class="pair lw_6">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=99">ОАиП</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=98">Миронова Д.А.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=61">416</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">9</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">10</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1881" -->
+	    						<div class="pair lw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=44">Смелова А.Д.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=2"></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=4">510</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    						    						<!--  pair-id="1880" -->
+	    						<div class="pair lw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=49">Кондратьев</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=2"></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=44">508</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1891" -->
+	    						<div class="pair lw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=44">Смелова А.Д.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=4">510</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    						    						<!--  pair-id="1890" -->
+	    						<div class="pair lw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=49">Кондратьев</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=44">508</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1897" -->
+	    						<div class="pair lw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1904" -->
+	    						<div class="pair lw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=103">ОснИнжГраф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=34">Кудласевич В.С.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=32">413</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1913" -->
+	    						<div class="pair lw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=104">АрифмЛогВТ</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=94">Фоменко Н.К.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=20">405</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1920" -->
+	    						<div class="pair lw_6">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=99">ОАиП</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=98">Миронова Д.А.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=61">416</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">10</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">11</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1882" -->
+	    						<div class="pair lw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=98">МатемПрофДеят</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=96">Гальцова О.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=2"></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=3">427</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1892" -->
+	    						<div class="pair lw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=99">ОАиП</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=98">Миронова Д.А.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=61">416</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1898" -->
+	    						<div class="pair lw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1905" -->
+	    						<div class="pair lw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=102">ТехКомОснКоман</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=59">Кудряшова Е.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=22">505</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1914" -->
+	    						<div class="pair lw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=7">КураторЧас</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=29">Занковец Е.Ю.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=21">425</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="11" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">11</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">12</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1883" -->
+	    						<div class="pair lw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=98">МатемПрофДеят</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=96">Гальцова О.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=2"></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=3">427</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1893" -->
+	    						<div class="pair lw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=99">ОАиП</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=98">Миронова Д.А.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=61">416</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1899" -->
+	    						<div class="pair lw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1906" -->
+	    						<div class="pair lw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=102">ТехКомОснКоман</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=59">Кудряшова Е.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=22">505</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="12" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="12" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">12</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">13</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1884" -->
+	    						<div class="pair lw_1 removed">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=97">ТРПО</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=97">Сидоренко В.О.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=2"></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=57">418</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    							    						<!--  move-id="22312" -->
+	    						<div class="pair lw_1 added">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=126">Урок снят</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=2"></a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=2"></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id="></a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="13" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1900" -->
+	    						<div class="pair lw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1907" -->
+	    						<div class="pair lw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=99">ОАиП</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=98">Миронова Д.А.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=61">416</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="13" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="13" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">13</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">14</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="14" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="14" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="14" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="14" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="14" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="14" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">14</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">15</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="15" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="15" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="15" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="15" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="15" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="15" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">15</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">16</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="16" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    							    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="16" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="16" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="16" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="16" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="16" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						
+	    					    					    			</td>
+	    				    			<td class="number">16</td>
+	    		</tr>
+						</tbody></table>
+			</div>
+			
+			<div id="right_week" style="position:relative; display:none; width:100%;">
+	    	<p class="date">11  — 16 мая</p>
+	    	<p class="today">первая неделя</p>
+	    	<table style="padding-top:10px;">
+	    		<tbody><tr>
+	    			<th></th>
+	    			<th>Пнд</th>
+	    			<th>Втр</th>
+	    			<th>Срд</th>
+	    			<th>Чтв</th>
+	    			<th>Птн</th>
+	    			<th>Сбт</th>
+	    			<th></th>
+	    		</tr>
+	    		<tr class="zamena">
+	    		    <th>&nbsp;</th>
+			    				    	<th>
+	    		    					</th>    		    
+	    						    	<th>
+	    		    					</th>    		    
+	    						    	<th>
+	    		    					</th>    		    
+	    						    	<th>
+	    		    					</th>    		    
+	    						    	<th>
+	    		    					</th>    		    
+	    						    	<th>
+	    		    					</th>    		    
+	    				    			<th></th>
+	    		</tr>
+	    		    		<tr>
+	    			<td class="number">1</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="1" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="1" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="1" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="1" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="1" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="1" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">1</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">2</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="2" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="2" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="2" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="2" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="2" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="2" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">2</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">3</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="3" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="3" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="3" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="3" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="3" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="3" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">3</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">4</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="4" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="4" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="4" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="4" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="4" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="4" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">4</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">5</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="5" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="5" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="5" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="5" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1908" -->
+	    						<div class="pair rw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=25">ИстБелГос</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=29">Занковец Е.Ю.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=21">425</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1915" -->
+	    						<div class="pair rw_6">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=105">ОперацСистем</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=95">Сватко И.Б.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=62">406</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">5</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">6</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="6" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1885" -->
+	    						<div class="pair rw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=101">ИнтрументПО</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=93">Кривошеина А.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=58">419</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="6" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="6" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1909" -->
+	    						<div class="pair rw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=25">ИстБелГос</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=29">Занковец Е.Ю.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=21">425</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1916" -->
+	    						<div class="pair rw_6">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=105">ОперацСистем</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=95">Сватко И.Б.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=62">406</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">6</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">7</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1876" -->
+	    						<div class="pair rw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=101">ИнтрументПО</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=93">Кривошеина А.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=58">419</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1886" -->
+	    						<div class="pair rw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=98">МатемПрофДеят</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=96">Гальцова О.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=3">427</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1894" -->
+	    						<div class="pair rw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1901" -->
+	    						<div class="pair rw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=25">ИстБелГос</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=29">Занковец Е.Ю.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=21">425</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1910" -->
+	    						<div class="pair rw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=104">АрифмЛогВТ</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=94">Фоменко Н.К.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=20">405</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1917" -->
+	    						<div class="pair rw_6">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=97">ТРПО</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=97">Сидоренко В.О.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=63">410</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">7</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">8</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1877" -->
+	    						<div class="pair rw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=2">ФизКультура</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=18">Демидович К.О.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=18">20</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1887" -->
+	    						<div class="pair rw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=98">МатемПрофДеят</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=96">Гальцова О.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=3">427</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1895" -->
+	    						<div class="pair rw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1902" -->
+	    						<div class="pair rw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=2">ФизКультура</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=18">Демидович К.О.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=18">20</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1911" -->
+	    						<div class="pair rw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=2">ФизКультура</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=18">Демидович К.О.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=18">20</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1918" -->
+	    						<div class="pair rw_6">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=97">ТРПО</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=97">Сидоренко В.О.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=63">410</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">8</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">9</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1879" -->
+	    						<div class="pair rw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=44">Смелова А.Д.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=4">510</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    						    						<!--  pair-id="1878" -->
+	    						<div class="pair rw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=49">Кондратьев</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=44">508</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1889" -->
+	    						<div class="pair rw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=44">Смелова А.Д.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=4">510</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    						    						<!--  pair-id="1888" -->
+	    						<div class="pair rw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=49">Кондратьев</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=44">508</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1896" -->
+	    						<div class="pair rw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1903" -->
+	    						<div class="pair rw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=103">ОснИнжГраф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=34">Кудласевич В.С.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=32">413</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1912" -->
+	    						<div class="pair rw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=101">ИнтрументПО</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=93">Кривошеина А.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=58">419</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1919" -->
+	    						<div class="pair rw_6">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=99">ОАиП</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=98">Миронова Д.А.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=61">416</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">9</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">10</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1881" -->
+	    						<div class="pair rw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=44">Смелова А.Д.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=4">510</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    						    						<!--  pair-id="1880" -->
+	    						<div class="pair rw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=49">Кондратьев</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=44">508</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1891" -->
+	    						<div class="pair rw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=44">Смелова А.Д.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=4">510</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    						    						<!--  pair-id="1890" -->
+	    						<div class="pair rw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=49">Кондратьев</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=44">508</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1897" -->
+	    						<div class="pair rw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1904" -->
+	    						<div class="pair rw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=103">ОснИнжГраф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=34">Кудласевич В.С.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=32">413</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1913" -->
+	    						<div class="pair rw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=104">АрифмЛогВТ</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=94">Фоменко Н.К.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=20">405</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1920" -->
+	    						<div class="pair rw_6">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=99">ОАиП</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=98">Миронова Д.А.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=61">416</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">10</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">11</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1882" -->
+	    						<div class="pair rw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=98">МатемПрофДеят</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=96">Гальцова О.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=3">427</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1892" -->
+	    						<div class="pair rw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=99">ОАиП</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=98">Миронова Д.А.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=61">416</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1898" -->
+	    						<div class="pair rw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1905" -->
+	    						<div class="pair rw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=102">ТехКомОснКоман</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=59">Кудряшова Е.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=22">505</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1914" -->
+	    						<div class="pair rw_5">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=7">КураторЧас</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=29">Занковец Е.Ю.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=21">425</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="11" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">11</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">12</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1883" -->
+	    						<div class="pair rw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=98">МатемПрофДеят</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=96">Гальцова О.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=3">427</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1893" -->
+	    						<div class="pair rw_2">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=99">ОАиП</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=98">Миронова Д.А.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=61">416</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1899" -->
+	    						<div class="pair rw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1906" -->
+	    						<div class="pair rw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=102">ТехКомОснКоман</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=59">Кудряшова Е.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=22">505</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="12" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="12" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">12</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">13</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1884" -->
+	    						<div class="pair rw_1">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=97">ТРПО</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=97">Сидоренко В.О.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=57">418</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="13" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1900" -->
+	    						<div class="pair rw_3">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!--  pair-id="1907" -->
+	    						<div class="pair rw_4">
+	    							<div class="left-column">
+		    							<div class="subject"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=99">ОАиП</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=98">Миронова Д.А.</a></div>
+		    							<div class="teacher"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id="></a></div>    								
+	    							</div>
+	    							<div class="right-column">
+		    							<div class="group"><span class="group-span"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a></span></div>    							
+		    							<div class="place"><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=61">416</a></div>    							    								
+	    							</div>
+	    							<div class="extra"></div>
+	    						</div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="13" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="13" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">13</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">14</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="14" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="14" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="14" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="14" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="14" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="14" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">14</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">15</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="15" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="15" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="15" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="15" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="15" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="15" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">15</td>
+	    		</tr>
+				    		<tr>
+	    			<td class="number">16</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="16" day="1" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="16" day="2" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="16" day="3" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="16" day="4" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="16" day="5" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td>
+	    					    						    						<!-- pair-number="16" day="6" -->
+	    						<div class="empty-pair"></div>
+	    						    					    					    				
+	    			</td>
+	    				    			<td class="number">16</td>
+	    		</tr>
+						</tbody></table>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="footer_div"></div>
+	</div><!-- #footer -->
+</div><!-- end wrap -->
+
+<div class="metrika">
+<!--metrika-->
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter18277714 = new Ya.Metrika({id:18277714,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/18277714" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+
+<ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 4; top: 0px; left: 0px; display: none;"></ul><veepn-lock-screen><template shadowrootmode="open"><style>html{box-sizing:border-box;text-size-adjust:100%;word-break:normal;tab-size:4}*,:before,:after{background-repeat:no-repeat;box-sizing:border-box}:before,:after{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0}hr{overflow:visible;height:0;color:inherit;border:0;border-top:1px solid}details,main{display:block}summary{display:list-item}small{font-size:80%}[hidden]{display:none!important}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}a{background-color:transparent}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace}pre{font-size:1em}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-color:inherit;text-indent:0}iframe{border-style:none}input{border-radius:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit;color:inherit}optgroup{font-weight:700}button{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit],[role=button]{cursor:pointer}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button,html [type=button],[type=reset],[type=submit]{appearance:auto}button,input,select,textarea{background-color:transparent;border-style:none}button:-moz-focusring,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{outline:1px dotted ButtonText}select{appearance:none}a:focus,button:focus,input:focus,select:focus,textarea:focus{outline-width:0}select::-ms-expand{display:none}select::-ms-value{color:currentcolor}legend{border:0;color:inherit;display:table;white-space:normal;max-width:100%}::-webkit-file-upload-button{appearance:auto;color:inherit;font:inherit}[disabled]{cursor:default}img{border-style:none}progress{vertical-align:baseline}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled=true]{cursor:default}ul,ol{list-style-type:none}figure{margin:0}@keyframes slide-in{0%{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.gradient-blue{background:radial-gradient(106.41% 128.47% at 50.15% 128.47%,#23abff,#3066ff)}.gradient-green{background:radial-gradient(92.26% 118.88% at 50.15% .13%,#00c3c3,#00aab3)}.gradient-purple{background:radial-gradient(165.12% 115.56% at 50.15% .13%,#a15aff,#00a0eb)}.bg-blue{background-color:#f2f5ff}.bg-purple{background-color:#f7f0ff}.bg-green{background-color:#ebffed}.lock-screen{font-family:FigtreeVF,sans-serif;letter-spacing:normal;position:fixed;z-index:2147483638;right:24px;bottom:24px;width:327px;border-radius:24px;overflow:hidden;box-shadow:0 24px 32px #00000014;animation:slide-in .3s ease-in-out forwards}.lock-screen__content{position:relative;padding:24px 24px 64px}.lock-screen__close{position:absolute;top:16px;right:16px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;opacity:.5}.lock-screen__label{height:26px;width:fit-content;border-radius:50px;background-color:#fff3;padding-inline:16px;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-size:12px;line-height:18px;margin:-8px auto 16px}.lock-screen__title{color:#fff;text-align:center;font-size:20px;line-height:28px;font-weight:600;margin-bottom:8px}.lock-screen__description{color:#f5f6f7;text-align:center;font-size:14px;line-height:20px}.lock-screen__description b{font-weight:600}.lock-screen__card{position:relative;z-index:1;margin-top:-44px;background-color:#fff;border-radius:24px;padding:32px 20px 20px}.lock-screen__inner{margin-bottom:24px}.lock-screen__submit{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:16px;height:40px;width:100%;border-radius:12px;padding-inline:16px;background-color:#f70;color:#fff;margin-bottom:16px}.lock-screen__skip{display:flex;align-items:center;justify-content:center;font-size:14px;line-height:20px;color:#82829c;margin-inline:auto}.price-card{border:1px solid #f2f2fc;background:linear-gradient(254.14deg,#fafbff .04%,#f5f8ff 100.04%);border-radius:24px;padding:24px 28px}.price-card__label{color:#4a5764;text-align:center;font-size:14px;line-height:20px;text-transform:uppercase;margin-bottom:16px}.price-card__price{display:flex;justify-content:center;align-items:flex-start;column-gap:2px;margin-bottom:12px}.price-card__currency{color:#515478;font-size:18px;line-height:28px}.price-card__number{color:#14142a;text-align:center;font-size:64px;line-height:54px}.price-card__wrap{display:flex;flex-direction:column}.price-card__decimal{color:#515478;font-size:18px;line-height:28px;font-weight:600}.price-card__period{color:#515478;font-size:14px;line-height:20px;margin-top:-6px}.price-card__discount{position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:12px}.price-card__discount-divider{position:absolute;z-index:0;top:50%;left:0;width:100%;height:1px;background-color:#dbe2f9;transform:translateY(-50%)}.price-card__discount-icon{position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%)}.price-card__discount-text{position:relative;z-index:2;color:#fff;font-size:12px;font-weight:600;line-height:18px}.price-card__features{display:flex;align-items:center;justify-content:center;column-gap:16px}.price-card__feature{color:#222e3a;font-size:14px;line-height:20px;display:flex;align-items:center;gap:6px}.price-card__feature:before{content:"";display:block;width:4px;height:4px;background-color:#20df9e;border-radius:50%;flex-shrink:0}.features-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.features-list__item{display:flex;flex-direction:column;align-items:center;gap:6px}.features-list__icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.features-list__text{color:#293a53;text-align:center;font-size:16px;line-height:24px;letter-spacing:-.1px}</style></template><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://panammoooggmlehahpcjckcncfeffcoi/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://panammoooggmlehahpcjckcncfeffcoi/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}</style></veepn-lock-screen></body></html>

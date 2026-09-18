@@ -1,0 +1,47 @@
+		$(function() {
+			$('#table-search').autocomplete({source: "action.php?action=global_search"});
+			
+			$('#options').click(function(event){
+				event.stopPropagation()
+				$('#options-block').fadeIn();
+			})
+			
+			$('#options-block').click(function(event){
+				event.stopPropagation()
+			})
+			
+			$('body').click(function(event){
+				$('#options-block').fadeOut();
+			})
+			
+			$('#dialog').dialog({
+				autoOpen: false,
+				modal:true,
+				width:450,
+				buttons: {
+				"Ясно": function() {
+					$( this ).dialog( "close" );
+					}
+				}
+			})
+			
+			$('#create-theme').click(function(){
+				$('#dialog').dialog('open');
+				return false;
+			})
+			
+			$('#current_week').show().click(function(){
+				ShowWeek($(this).attr('checked')?curr_week:'');
+			})
+			
+			//ShowWeek(curr_week);
+			//$('#info_panel').show();
+		});
+		
+		function ShowWeek(w) {
+			if (w!='') $('.week').hide();
+			$('.week'+w).show();
+		}
+		
+
+		

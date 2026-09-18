@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="96dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                style="@style/SettingsPageTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Изменение журнала" />
+
+            <TextView
+                android:id="@+id/teacherSubtitle"
+                style="@style/ProfileSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/subjectChipRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/groupChipRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:id="@+id/teacherToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Spinner
+                    android:id="@+id/dayTypeSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_day_chip_inactive" />
+
+                <EditText
+                    android:id="@+id/newDateInput"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/bg_day_chip_inactive"
+                    android:fontFamily="@font/manrope"
+                    android:hint="2026-08-01"
+                    android:inputType="date"
+                    android:paddingHorizontal="8dp"
+                    android:singleLine="true"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/addDateButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/bg_day_chip_inactive"
+                    android:fontFamily="@font/manrope"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:text="Добавить"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/addTodayButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_day_chip_inactive"
+                    android:fontFamily="@font/manrope"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:text="Сегодня"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/teacherError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_error_banner"
+                android:fontFamily="@font/manrope"
+                android:padding="10dp"
+                android:textColor="@color/markAlert"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/teacherModeRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/undoButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_day_chip_inactive"
+                    android:fontFamily="@font/manrope"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:text="Отменить"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/modeLab"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_day_chip_inactive"
+                    android:fontFamily="@font/manrope"
+                    android:gravity="center"
+                    android:text="Лаб. / ОКР"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/modeJournal"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_day_chip_active_solid"
+                    android:fontFamily="@font/manrope"
+                    android:gravity="center"
+                    android:text="Журнал"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/modeLateness"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_day_chip_inactive"
+                    android:fontFamily="@font/manrope"
+                    android:gravity="center"
+                    android:text="Опоздания"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/readOnlyBadge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/manrope"
+                android:text="Только просмотр"
+                android:textColor="#D97706"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/teacherEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/manrope"
+                android:gravity="center"
+                android:text="Загрузка…"
+                android:textColor="@color/textMuted"
+                android:textSize="15sp" />
+
+            <FrameLayout
+                android:id="@+id/teacherGridHost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/white"
+                android:padding="4dp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

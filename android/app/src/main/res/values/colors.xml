@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3390EC</color>
+    <color name="colorPrimaryDark">#2D7FD6</color>
+    <color name="colorAccent">#3390EC</color>
+    <color name="pageBackground">#FFFFFF</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="textPrimary">#111827</color>
+    <color name="textSecondary">#6B7280</color>
+    <color name="textMuted">#9CA3AF</color>
+    <color name="border">#E5E7EB</color>
+    <color name="navInactive">#6B7280</color>
+    <color name="navActive">#3390EC</color>
+    <color name="error">#DC2626</color>
+    <color name="success">#059669</color>
+    <color name="markAlert">#DC2626</color>
+</resources>

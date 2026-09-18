@@ -1,0 +1,77 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/desktop/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!env.example
+
+# Cloudflare Tunnel secrets (генерируются setup-cloudflare-tunnel.ps1)
+docker/cloudflare/credentials.json
+docker/cloudflare/config.yml
+
+# Firebase service account (только Vercel env)
+*firebase-adminsdk*.json
+mini-kbp-firebase-adminsdk*.json
+android/app/google-services.json
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+.vercel
+
+# Electron pack output
+/desktop/release/
+/desktop/dist/
+
+# Fork: do not ship large desktop installers to GitHub (<100MB limit)
+/public/downloads/*.deb
+/public/downloads/*.AppImage
+/public/downloads/*.zip
+
+# signing / local secrets — never publish
+/key
+/key.old
+*.jks
+*.keystore
+android/keystore.properties
+
+# local IDE / agent
+.idea/
+.vscode/
+.claude/
+.cursor/
+/test-results/

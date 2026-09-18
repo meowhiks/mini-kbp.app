@@ -1,0 +1,777 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0046)https://kbp.by/rasp/timetable/view_beta_kbp/?q -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+	   	        <meta name="keywords" content="Колледж, бизнес, право, учеба, курсовые, задания, дипломы, КБП, ТБП, профессия, товаровед, программист, 1С, предприятие, бухгалтер, экономика, экономист, техникум, KBP, TBP, банк, финансы, коммерция, юристы, работа, карьера, технологии, программы, обучение, аналитика">
+        <meta name="description" content="Колледж безнеса и права - это профессиональное обучение по следующим специальностям: экономика и организация производства, коммерческое дело, банковское дело, бухгалтерский учет, правоведение. Мы используем современные методы обучения и новые технологии для повышения уровня обучения: мультимедийные, программы и т.д.">
+        
+   		<link type="text/css" href="./Расписание КБП_files/jquery-ui-1.8.16.custom.css" rel="stylesheet">	
+		<script type="text/javascript" src="./Расписание КБП_files/jquery-1.6.2.min.js.загрузка"></script>
+		<script type="text/javascript" src="./Расписание КБП_files/jquery-ui-1.8.16.custom.min.js.загрузка"></script>
+		<script type="text/javascript" src="./Расписание КБП_files/jquery-commons.js.загрузка"></script>
+		<script type="text/javascript" src="./Расписание КБП_files/common.js.загрузка"></script>
+		<link rel="stylesheet" href="./Расписание КБП_files/style.css" type="text/css">
+		<link rel="stylesheet" href="./Расписание КБП_files/default.css" type="text/css">
+		
+        <title>Расписание КБП</title>
+    </head>
+    <body style="margin-top: 50px;">
+    	﻿<div id="header">
+   	<form method="get" action="https://kbp.by/rasp/timetable/view_beta_kbp/?q">
+	<div id="text_search">
+		<span class="style_text">Поиск по расписанию:</span> <input type="text" id="table-search" name="q" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+			<input type="submit" id="button_search" value="Показать">
+	</div>
+   	</form>
+	<div id="right_block">
+	<div id="info"><span class="style_text">
+									</span></div>
+	<div id="options"><!--<a href="#"><div><img src="i/options.png" alt="настройки" /></div></a>--></div>	
+	</div>
+</div>
+    	<div id="options-block">
+    		Темы:
+    		<ul style="list-style-type: none; list-style-position: inside">
+	    		<li><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?theme=default">Расписание занятий</a></li>
+	    		<li><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?theme=classic">Бело-голубая</a></li>
+	    		<li><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?theme=blue">Голубая</a></li>
+	    		<li><a href="https://kbp.by/rasp/timetable/view_beta_kbp/?theme=bw">Черно-белая</a></li>	    				
+    		</ul>
+    		<div style="margin-top:20px"><!--<a href="#" id="create-theme"></a>--></div> 		
+    	</div>
+    	<!--
+    	<div id="dialog" title="Создайте свою тему!">
+    		<div style="line-height: 1.5em">Вы можете разработать и предложить свою тему оформления расписания. Уже существующие темы можно найти по адресу http://guki.org/timetable/view_beta/css/themes/</div>
+    	</div>
+-->    	<div class="find_block">
+    	<div class="block_back">
+   		<div class="text_h1">Возможно вы имели в виду:</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=47">106</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=9">108</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=64">109</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=37">118</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=14">119</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=17">123</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=10">127</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=48">133</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=2">18а</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=28">18б</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=18">20</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=42">202</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=11">224</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=25">228</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=31">23</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=26">237</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=23">25</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=34">301</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=39">303</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=33">305</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=19">306</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=13">308</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=12">310</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=8">312</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=6">313</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=15">314</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=1">319</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=24">320</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=30">322</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=5">324</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=27">327</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=46">329</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=50">401</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=59">403</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=20">405</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=62">406</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=60">408</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=63">410</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=32">413</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=65">414</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=61">416</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=57">418</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=58">419</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=21">425</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=3">427</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=29">429</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=36">501</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=51">502</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=49">503</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=55">504</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=22">505</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=40">506</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=44">508</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=4">510</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=41">512</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=43">513</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=7">516</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=52">518</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=35">519</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=38">520</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=54">522</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=45">524</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=53">525</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=56">527</a>							</div>
+					<div>
+												<span class="type_find">аудитория</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=place&amp;id=16">529</a>							</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=118">WebДизайн</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=95">АДБ</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=31">АдмДеликтПраво</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=115">Алырщикова Т.А.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=9">Амельченя О.А.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=4">АнглЯзы</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=76">Андреев С.А.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=88">Андреева Е.А.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=42">Анисько Н.С.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=104">АрифмЛогВТ</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=17">Архипова О.С.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=78">АХД</a>			</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=33">Б-391</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=32">Б-491</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=8">Б-591</a>											</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=93">БанкМаркетинг</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=92">БанкМенеджмент</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=89">БанкОперации</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=110">Банцевич С.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=91">Барановская С.Н.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=99">Басалыга Л.В.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=121">БДиСУБД</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=13">БелЛит</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=36">БелЯзПрофЛекс</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=6">БелЯзык</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=86">БизнесПлан</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=10">Биология</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=20">Богданович К.С.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=11">Бодиловски</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=23">Бондаренко</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=108">Бондарчик В.В.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=88">БУвБанк</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=68">Бурак А.Ч.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=79">БухУчВОтраслях</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=57">БухУчет</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=109">Бык А.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=40">Василенко Е.Н.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=110">ВебПрогСтСерв</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=55">Веремеева Е.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=106">Веренич К.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=3">Виткевич Г.И.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=41">Войновская И.М.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=62">Войтик Е.П.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=36">ВоробьеваИ.В.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=60">ВЭД</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=86">Вязович Е.А.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=10">ГавриленкИ.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=63">ГавриленкоИ.К.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=96">Гальцова О.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=67">Гапоненко И.О.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=18">География</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=45">Горелова О.Б.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=26">ГражПраво</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=38">ГражПроцесс</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=83">Григораш М.А.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=74">Григорьева Т.Г.</a>															</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=40">Д-391</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=41">Д-412</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=38">Д-491</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=39">Д-512</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=10">Д-591</a>											</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=90">ДелКоммуникац</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=18">Демидович К.О.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=85">ДенежОбрКредит</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=24">ДокОбесУпрОрг</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=8">Доп(Мед</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=16">ДопрПодгот</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=25">Дьячкова М.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=71">Егорова А.А.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=60">Жандарова Е.А.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=41">ЖилПраво</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=64">ЗакупПроизЛог</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=29">Занковец Е.Ю.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=42">ЗащНасТерЧС</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=77">Зеневич М.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=35">Зимовилина Д.С.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=115">ЗКИ</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=69">Ивашко Е.А.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=101">ИнтрументПО</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=9">Информатика</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=29">ИнфТехнологии</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=28">ИнЯзПро</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=11">ИстБелВКонтВс</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=25">ИстБелГос</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=27">ИсторГосиПрава</a>			</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=27">К-391</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=26">К-491</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=5">К-591</a>											</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=39">Калашников И.О.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=32">Каминская Л.А.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=112">Кибисова А.С.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=12">Клименко Д.Ф.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=65">Клочко Е.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=22">Ковалев А.В.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=56">КомДеят</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=114">КомпьютСети</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=49">Кондратьев</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=102">Коропа Е.Н.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=19">Короткевич М.Э.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=108">КПиЯП</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=8">Красковская С.Н.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=93">Кривошеина А.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=34">Кудласевич В.С.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=111">Кудрявцева М.О.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=59">Кудряшова Е.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=26">Кулевская Д.Г.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=73">Кулеш Т.М.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=87">Куницкая О.Л.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=7">КураторЧас</a>			</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=30">Л-391</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=31">Л-392</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=28">Л-491</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=29">Л-492</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=6">Л-591</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=7">Л-592</a>											</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=64">Лазарева Л.Г.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=79">Лазук Н.Г.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=15">Лишакова Е.В.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=51">Логистика</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=69">ЛогистСклад</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=47">Лубенкова В</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=80">Малафей И.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=33">Малец А.Н.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=72">Маркетинг</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=3">Математика</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=98">МатемПрофДеят</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=4">Машлякевич М.С.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=17">МедПодгот</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=98">Миронова Д.А.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=56">Михалевич И.М.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=90">МихалевичВ.Ю.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=58">Мозоль А.С.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=54">Мороз Т.П.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=81">Муравицкая А.Ф.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=5">Мурашко В.В</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=77">Налогооблож</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=15">НемЯзык</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=27">Неткачева Е.Р.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=52">Нос З.В.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=99">ОАиП</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=68">ОборудХрУстр</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=122">Обр3-мерГрИзоб</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=124">ОбрЭконИнф</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=105">ОперацСистем</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=65">ОргЛогистДеят</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=87">ОргПроизвод</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=48">ОргСбытДеят</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=53">ОргТехнолТорг</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=103">ОснИнжГраф</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=81">ОснИнновацРазв</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=127">ОснИнфБезопас</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=125">ОснКроссплатПО</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=61">ОснМаркетинга</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=67">ОснМенеджмента</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=76">ОснПрава</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=49">ОснПредприним</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=62">ОснСанГигиен</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=34">ОснЭкономики</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=66">ОхранаТруда</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=21">ОхрОкрСрЭнерг</a>			</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=21">П-391</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=22">П-392</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=23">П-393</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=24">П-394</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=25">П-415</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=16">П-491</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=17">П-492</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=18">П-493</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=19">П-494</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=20">П-515</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=1">П-591</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=2">П-592</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=3">П-593</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=4">П-594</a>											</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=46">Паскал Е.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=101">Пашкевич Н.А.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=50">Пашкун И.Э.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=105">Пестрак С.С.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=113">Подгорный Н.Н.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=30">Попова Е.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=51">Потапова А.Н.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=57">Потарусова В.В.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=113">ПрCрСоздInter</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=50">ПравОбесКД</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=46">ПравоСоцОбес</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=123">ПрактWebПрогр</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=128">Практика</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=111">ПрактПрограм</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=100">ПрактРабПроф</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=109">ПредДеятУпрПр</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=80">ПроверкаКонтр</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=82">ПРПД</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=54">ПсихолЭтикаДО</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=116">Рагунович И.М.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=120">РазрМобилПрил</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=104">Райтузов В.В.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=73">РаспрТранЛог</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=103">Реут Е.С.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=48">Романенко Г.Н.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=12">РусЛит</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=14">РусЯзык</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=91">РынокЦенБум</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=21">Саврицкая М.А.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=28">Сазон Л.Т.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=13">Саксонова Е.Ф.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=72">Саморядов А.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=7">Сахарук Л.Б.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=95">Сватко И.Б.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=43">Свирид Д.И.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=107">Сельханович М.А.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=33">СемейноеПраво</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=38">Сенченко Е.Н.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=97">Сидоренко В.О.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=117">СистУпрБД</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=119">СкриптовыеЯП</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=44">Смелова А.Д.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=52">СтандартСертиф</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=116">СтандСертПО</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=74">Статистика</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=70">Столбовая Н.В.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=107">СтруктАлг</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=53">Суворова И.А.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=30">Судоустройство</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=45">СудПрТрудСпор</a>			</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=49">Т-391</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=50">Т-392</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=51">Т-393</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=52">Т-394</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=53">Т-395</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=54">Т-396</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=55">Т-417</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=42">Т-491</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=43">Т-492</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=44">Т-493</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=45">Т-494</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=46">Т-495</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=47">Т-496</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=48">Т-517</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=11">Т-591</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=12">Т-592</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=13">Т-593</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=14">Т-594</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=15">Т-595</a>											</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=23">ТаможПраво</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=106">ТеорВерМатСт</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=112">ТестированиеПО</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=94">ТехАвтБанкДеят</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=102">ТехКомОснКоман</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=70">ТехнКоммун</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=31">Тиколович В.В.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=47">Товаровед</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=97">ТРПО</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=22">ТрудПраво</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=24">Тувакклыче</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=20">УголПраво</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=40">УголПроцесс</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=71">УправЗапасЛог</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=63">УправлПродаж</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=66">Урбанович Н.Н.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=126">Урок снят</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=44">УчПрГражПрав</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=84">УчПрЭконОрг</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=84">Ушакова Е.С.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=1">Физика</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=2">ФизКультура</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=75">ФинансКредит</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=58">ФинансОрганиз</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=96">ФинКредСист</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=94">Фоменко Н.К.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=89">Харитонова Ю.В.</a>															</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=5">Химия</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=43">ХозПраво</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=39">ХозПроцесс</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=59">Ценообразов</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=19">Черчение</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=37">Шаг И.М.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=78">Шадырко И.Э.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=75">Шалайко В.Н.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=92">Шаляпин Ю.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=82">Шарох М.И.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=16">Шафоростова Ю.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=100">Шкабура А.Д.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=61">Шушлябина B.M.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=6">Щербицкий</a>															</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=36">Э-391</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=37">Э-412</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=34">Э-491</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=35">Э-512</a>											</div>
+					<div>
+								<span class="type_find">группа</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=group&amp;id=9">Э-591</a>											</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=35">ЭкологПраво</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=55">ЭкономОрганиз</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=83">ЭкономТруда</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=32">ЭтикаПсДеятЮр</a>			</div>
+					<div>
+																<span class="type_find">предмет</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=subject&amp;id=37">ЮрСлОрганиз</a>			</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=1">Янушкевич Е.В.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=14">Ясинская Я.Я.</a>															</div>
+					<div>
+				<span class="type_find">преподаватель</span> <a href="https://kbp.by/rasp/timetable/view_beta_kbp/?cat=teacher&amp;id=85">Яскевич И.В.</a>															</div>
+				</div>
+		</div>
+	
+<ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 4; top: 0px; left: 0px; display: none;"></ul><veepn-lock-screen><template shadowrootmode="open"><style>html{box-sizing:border-box;text-size-adjust:100%;word-break:normal;tab-size:4}*,:before,:after{background-repeat:no-repeat;box-sizing:border-box}:before,:after{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0}hr{overflow:visible;height:0;color:inherit;border:0;border-top:1px solid}details,main{display:block}summary{display:list-item}small{font-size:80%}[hidden]{display:none!important}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}a{background-color:transparent}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace}pre{font-size:1em}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-color:inherit;text-indent:0}iframe{border-style:none}input{border-radius:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit;color:inherit}optgroup{font-weight:700}button{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit],[role=button]{cursor:pointer}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button,html [type=button],[type=reset],[type=submit]{appearance:auto}button,input,select,textarea{background-color:transparent;border-style:none}button:-moz-focusring,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{outline:1px dotted ButtonText}select{appearance:none}a:focus,button:focus,input:focus,select:focus,textarea:focus{outline-width:0}select::-ms-expand{display:none}select::-ms-value{color:currentcolor}legend{border:0;color:inherit;display:table;white-space:normal;max-width:100%}::-webkit-file-upload-button{appearance:auto;color:inherit;font:inherit}[disabled]{cursor:default}img{border-style:none}progress{vertical-align:baseline}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled=true]{cursor:default}ul,ol{list-style-type:none}figure{margin:0}@keyframes slide-in{0%{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.gradient-blue{background:radial-gradient(106.41% 128.47% at 50.15% 128.47%,#23abff,#3066ff)}.gradient-green{background:radial-gradient(92.26% 118.88% at 50.15% .13%,#00c3c3,#00aab3)}.gradient-purple{background:radial-gradient(165.12% 115.56% at 50.15% .13%,#a15aff,#00a0eb)}.bg-blue{background-color:#f2f5ff}.bg-purple{background-color:#f7f0ff}.bg-green{background-color:#ebffed}.lock-screen{font-family:FigtreeVF,sans-serif;letter-spacing:normal;position:fixed;z-index:2147483638;right:24px;bottom:24px;width:327px;border-radius:24px;overflow:hidden;box-shadow:0 24px 32px #00000014;animation:slide-in .3s ease-in-out forwards}.lock-screen__content{position:relative;padding:24px 24px 64px}.lock-screen__close{position:absolute;top:16px;right:16px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;opacity:.5}.lock-screen__label{height:26px;width:fit-content;border-radius:50px;background-color:#fff3;padding-inline:16px;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-size:12px;line-height:18px;margin:-8px auto 16px}.lock-screen__title{color:#fff;text-align:center;font-size:20px;line-height:28px;font-weight:600;margin-bottom:8px}.lock-screen__description{color:#f5f6f7;text-align:center;font-size:14px;line-height:20px}.lock-screen__description b{font-weight:600}.lock-screen__card{position:relative;z-index:1;margin-top:-44px;background-color:#fff;border-radius:24px;padding:32px 20px 20px}.lock-screen__inner{margin-bottom:24px}.lock-screen__submit{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:16px;height:40px;width:100%;border-radius:12px;padding-inline:16px;background-color:#f70;color:#fff;margin-bottom:16px}.lock-screen__skip{display:flex;align-items:center;justify-content:center;font-size:14px;line-height:20px;color:#82829c;margin-inline:auto}.price-card{border:1px solid #f2f2fc;background:linear-gradient(254.14deg,#fafbff .04%,#f5f8ff 100.04%);border-radius:24px;padding:24px 28px}.price-card__label{color:#4a5764;text-align:center;font-size:14px;line-height:20px;text-transform:uppercase;margin-bottom:16px}.price-card__price{display:flex;justify-content:center;align-items:flex-start;column-gap:2px;margin-bottom:12px}.price-card__currency{color:#515478;font-size:18px;line-height:28px}.price-card__number{color:#14142a;text-align:center;font-size:64px;line-height:54px}.price-card__wrap{display:flex;flex-direction:column}.price-card__decimal{color:#515478;font-size:18px;line-height:28px;font-weight:600}.price-card__period{color:#515478;font-size:14px;line-height:20px;margin-top:-6px}.price-card__discount{position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:12px}.price-card__discount-divider{position:absolute;z-index:0;top:50%;left:0;width:100%;height:1px;background-color:#dbe2f9;transform:translateY(-50%)}.price-card__discount-icon{position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%)}.price-card__discount-text{position:relative;z-index:2;color:#fff;font-size:12px;font-weight:600;line-height:18px}.price-card__features{display:flex;align-items:center;justify-content:center;column-gap:16px}.price-card__feature{color:#222e3a;font-size:14px;line-height:20px;display:flex;align-items:center;gap:6px}.price-card__feature:before{content:"";display:block;width:4px;height:4px;background-color:#20df9e;border-radius:50%;flex-shrink:0}.features-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.features-list__item{display:flex;flex-direction:column;align-items:center;gap:6px}.features-list__icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.features-list__text{color:#293a53;text-align:center;font-size:16px;line-height:24px;letter-spacing:-.1px}</style></template><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://panammoooggmlehahpcjckcncfeffcoi/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://panammoooggmlehahpcjckcncfeffcoi/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}</style></veepn-lock-screen></body></html>
