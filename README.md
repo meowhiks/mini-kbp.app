@@ -56,3 +56,13 @@ Live reload (опционально): `CAP_SERVER_URL=http://192.168.x.x:3000 np
 | Свободные аудитории | по текущей паре |
 | Тема | светлая / тёмная, акценты |
 | Уведомления | локальные пинги о заменах |
+
+---
+
+## Релизы
+
+Актуальный APK: [Releases](https://github.com/meowhiks/mini-kbp.app/releases)
+
+| Версия | Скачать |
+|--------|---------|
+| **0.3.22** | [mini-kbp-0.3.22.apk](https://github.com/meowhiks/mini-kbp.app/releases/download/v0.3.22/mini-kbp-0.3.22.apk) |
